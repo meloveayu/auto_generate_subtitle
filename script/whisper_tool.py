@@ -55,14 +55,14 @@ def load_model_bin(model_path, device):
         hf_state_dict[new_key] = hf_state_dict.pop(key)
 
     # Init Whisper Model and replace model weights
-    whisper_model = whisper.load_model('large')
+    whisper_model = whisper.load_model("large",device)
     whisper_model.load_state_dict(hf_state_dict)
     return whisper_model
 
 
 def do_whisper(audio, srt_path, language, hf_model_path, device):
     if hf_model_path == "":
-        model = whisper.load_model("base")
+        model = whisper.load_model("turbo", device)
     else:
         model = load_model_bin(hf_model_path, device)
     print("whisper working...")

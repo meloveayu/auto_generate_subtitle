@@ -1,21 +1,20 @@
-# auto ai subtitle translator
-
-## 0909更新
-新增指定whisper model功能，支持使用huggingface下载的自定义model
+# auto ai subtitle
 
 ## 简介
-ai字幕生成，字幕翻译 基于openai/whisper、translate、ffmpeg，自动为视频生成翻译过后的srt字幕文件，支持自定义各种语言
+ai字幕生成，字幕翻译 基于openai/whisper、translate、ffmpeg，自动为视频生成翻译过后的srt字幕文件，支持自定义各种语言、支持使用huggingface下载的自定义model
 
 ## 功能
 1.基于视频中的语音直接生成字幕文件  
 2.翻译字幕文件
 
 ## 使用方法
-安装 `ffmpeg`
+安装 `ffmpeg`，安装方式详见[官网](https://ffmpeg.org/download.html)
 
-安装依赖 `pip install -r requirements.txt`
+（可选）使用gpu计算请官网安装[CUDA](https://developer.nvidia.com/cuda-downloads)和[cuDNN](https://developer.nvidia.com/cudnn-downloads)
 
-将配置信息填入 `config.yaml`
+安装依赖 `pip install -r requirements.txt`，默认安装`torch`为cpu版本，使用gpu请安装CUDA相关内容后在[PyTorch官网](https://pytorch.org/get-started/locally/)自行安装对应CUDA的gpu版本
+
+将视频相关配置信息填入 `config.yaml`
 
 执行 `python main.py`
 
@@ -34,5 +33,8 @@ ai字幕生成，字幕翻译 基于openai/whisper、translate、ffmpeg，自动
 
 ## TODO
 提高结果准确度
+ - whisper换用转文字精度更高的model
+ - 接入大模型对翻译质量进行提高
+ - 使用社区的部分优秀项目（whisperX等）
 
-GUI支持
+GUI支持（待定）

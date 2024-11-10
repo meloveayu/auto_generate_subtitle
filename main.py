@@ -31,7 +31,7 @@ if __name__ == '__main__':
     hours = time_difference.seconds // 3600
     minutes = (time_difference.seconds % 3600) // 60
     seconds = time_difference.seconds % 60
-    print("音频转字幕文件成功，耗时{hours}小时{minutes}分钟{seconds}秒")
+    print(f"音频转字幕文件成功，耗时{hours}小时{minutes}分钟{seconds}秒")
 
     # 使用translate库对字幕文件进行翻译（未来是否可以考虑使用大模型实现精度更好的翻译？）
     print("翻译开始")
@@ -44,6 +44,6 @@ if __name__ == '__main__':
     hours = time_difference.seconds // 3600
     minutes = (time_difference.seconds % 3600) // 60
     seconds = time_difference.seconds % 60
-    print("翻译成功，耗时{hours}小时{minutes}分钟{seconds}秒")
+    print(f"翻译成功，耗时{hours}小时{minutes}分钟{seconds}秒")
 
     print("成功")
