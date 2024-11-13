@@ -1,11 +1,14 @@
 import whisperx
 import torch
-import gc 
+import gc
+import yaml 
 
 device = "cuda" 
 audio_file = "D:\\test\Ranma.06.mp3"
 batch_size = 8 # reduce if low on GPU mem
 compute_type = "int8" # change to "int8" if low on GPU mem (may reduce accuracy)
+with open('config.yaml', encoding='utf-8') as f:
+        config = yaml.load(f.read(), Loader=yaml.FullLoader)
 
 # 1. Transcribe with original whisper (batched)
 model = whisperx.load_model("large-v2", device, compute_type=compute_type)
@@ -31,7 +34,7 @@ print(result["segments"]) # after alignment
 import gc; gc.collect(); torch.cuda.empty_cache(); del model_a
 
 # 3. Assign speaker labels
-diarize_model = whisperx.DiarizationPipeline(use_auth_token='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', device=device)
+diarize_model = whisperx.DiarizationPipeline(use_auth_token=config["hf_token"], device=device)
 
 # add min/max number of speakers if known
 diarize_segments = diarize_model(audio)

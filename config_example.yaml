@@ -16,3 +16,5 @@ to: zh
 hf_model_path: ""
 #调用设备: cuda, cpu
 device: cuda
+# Hugging face Token
+hf_token: ""
