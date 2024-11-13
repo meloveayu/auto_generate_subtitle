@@ -8,33 +8,35 @@ ai字幕生成，字幕翻译 基于openai/whisper、translate、ffmpeg，自动
 2.翻译字幕文件
 
 ## 使用方法
+基础环境为 python v3.10
+
 安装 `ffmpeg`，安装方式详见[官网](https://ffmpeg.org/download.html)
 
 （可选）使用gpu计算请官网安装[CUDA](https://developer.nvidia.com/cuda-downloads)和[cuDNN](https://developer.nvidia.com/cudnn-downloads)
 
-安装依赖 `pip install -r requirements.txt`，默认安装`torch`为cpu版本，使用gpu请安装CUDA相关内容后在[PyTorch官网](https://pytorch.org/get-started/locally/)自行安装对应CUDA的gpu版本
+安装依赖 `pip install -r requirements.txt`，使用gpu请安装CUDA相关内容后在[PyTorch官网](https://pytorch.org/get-started/locally/)自行安装对应CUDA的gpu版本
 
-将视频相关配置信息填入 `config.yaml`
+`config_example.yaml`复制改名为 `config.yaml` 将视频相关配置信息填入 
 
 执行 `python main.py`
 
 ## 效果
 原视频：
 
-![img.png](img.png)
+![](docs\img\without_subtitle.png)
 
 执行脚本后生成以下文件：
 
-![img_2.png](img_2.png)
+![](docs\img\list.png)
 
 添加生成的字幕文件后：
 
-![img_1.png](img_1.png)
+![](docs\img\with_subtitle.png)
 
 ## TODO
 提高结果准确度
  - whisper换用转文字精度更高的model
- - 接入大模型对翻译质量进行提高
- - 使用社区的部分优秀项目（whisperX等）
+ - 接入大模型实现翻译功能替换translate模块，对翻译质量进行提高
+ - 实现实时输出翻译内容，可参照使用whisperX
 
 GUI支持（待定）

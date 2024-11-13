@@ -1,6 +1,6 @@
 import yaml
 
-from script import translate_tool, audio_tool, whisper_tool
+from script import translate_tool, audio_tool, whisper_tool, whisperx_tool
 from datetime import datetime
 
 if __name__ == '__main__':
@@ -23,8 +23,9 @@ if __name__ == '__main__':
     # 使用whisper实现音频转字幕文件
     print("音频转字幕文件开始")
     start_time = datetime.now()
-    whisper_tool.do_whisper(config['output'], config['srt_path'], config['from'], config['hf_model_path'],
-                            config['device'])
+    # 换用whisperx
+    whisperx_tool.do_whisper(config['output'], config['srt_path'], config['from'], config['device']\
+                             ,config['compute_type'],config['batch_size'])
     end_time = datetime.now()
     time_difference = end_time - start_time
     days = time_difference.days
