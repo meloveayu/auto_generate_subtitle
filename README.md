@@ -25,7 +25,7 @@ ai字幕生成，字幕翻译 基于openai/whisper、translate、ffmpeg，自动
 
 ![process.png](process.png)
 
-audio_tool部分主要是调用了`ffpeg`库来将视频文件转成对应mp3音频文件。
+audio_tool部分主要是调用了`ffmpeg`库来将视频文件转成对应mp3音频文件。
 
 whisper_tool部分调用whisper模型生成音频对应的原语言字幕，是核心步骤。
 
