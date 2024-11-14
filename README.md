@@ -20,6 +20,17 @@ ai字幕生成，字幕翻译 基于openai/whisper、translate、ffmpeg，自动
 
 执行 `python main.py`
 
+## 代码结构
+基本结构分三步走，如图：
+
+![process.png](process.png)
+
+audio_tool部分主要是调用了`ffpeg`库来将视频文件转成对应mp3音频文件。
+
+whisper_tool部分调用whisper模型生成音频对应的原语言字幕，是核心步骤。
+
+translate_tool部分主要是调用`translate`库对字幕文件进行翻译，考虑到该库底层是调用了部分翻译服务的免费接口，翻译质量堪堪一用，后续可以替换成翻译质量较好的大模型翻译等。
+
 ## 效果
 原视频：
 
