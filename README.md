@@ -23,15 +23,15 @@ ai字幕生成，字幕翻译 基于openai/whisper、translate、ffmpeg，自动
 ## 效果
 原视频：
 
-![](docs\img\without_subtitle.png)
+![without_subtitle.png](without_subtitle.png)
 
 执行脚本后生成以下文件：
 
-![](docs\img\list.png)
+![list.png](list.png)
 
 添加生成的字幕文件后：
 
-![](docs\img\with_subtitle.png)
+![with_subtitle.png](with_subtitle.png)
 
 ## TODO
 提高结果准确度
